@@ -1,0 +1,154 @@
+<html>
+
+<head>
+  <title>Zcoi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/manageuser.css">
+  <script type="text/javascript" src="/javascripts/angula.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style='background-color: #232738; min-width :900px' ng-app="cbk" ng-controller="ctr1">
+  
+  <div class='header_bar'>
+    <div class='header_bar_title'>
+      <div class='header_bar_title_Reactangle'></div>
+      <div class='header_bar_title_text'>A D M I N</div>
+    </div>
+    <div class='header_bar_symbol'>
+      <div class='header_bar_symbol_reactangle'></div>
+      <div class='header_bar_symbol_text'>Z</div>
+    </div>
+  </div>
+  <div class='navigation_bar'>
+    <div class='navigation_bar_manage'>
+      <div class='navigation_bar_manage_text'>
+        <a href='http://localhost:3000/admin/admin2' style="color: white"> Home </a>
+      </div>
+      <div class='navigation_bar_manage_line'></div>
+    </div>
+    <div class='navigation_bar_interest'>
+      <div class='navigation_bar_interest_text'>
+        <p>
+          <a href='http://localhost:3000/admin/user'> Manage users </a>
+        </p>
+        <div class='navigation_bar_interest_line'></div>
+      </div>
+    </div>
+
+    <div class='navigation_bar_coinbase'>
+      <div class='navigation_bar_coinbase_text'>
+        <a href='http://localhost:3000/admin/sendcoinbase' style="color: white"> Send coinbase </a>
+      </div>
+      <div class='navigation_bar_coinbase_line'></div>
+    </div>
+  </div>
+
+  <div class='line_main'></div>
+
+
+  <div class='data' ng-init='getUser()'>
+    <div class="btn-group" style='left : 2%'>
+      <button type="button" class="btn btn-primary" ng-click='getUser()'>User</button>
+      <button type="button" class="btn btn-primary" ng-click='getUserBlock()'>Blockuser</button>
+
+    </div>
+
+    <div class='data_table container' style='width :100%'>
+      <table class=' table table-hover'>
+        <thead>
+          <tr>
+            <th style=" color : white "> name </th>
+            <th style=" color : white "> balance </th>
+            <th style=" color : white "> infor </th>
+            <th style=" color : white "> action </th>
+          </tr>
+
+        </thead>
+        <tbody>
+
+          <tr ng-repeat="x in list " ng-style=" {color : 'white'}" ng-mouseover=" mystyle = { 'color' : 'black'}" ng-mouseleave="mystyle = {'color' : 'white'}" >
+            <td ng-style="mystyle"> {{x.username}} </td>
+            <td ng-style="mystyle"> {{x.balance}} </td>
+            <td style='color: rgb(76, 76, 238); text-decoration: underline' ng-click='showinfor($index)' data-toggle="modal" data-target="#myModal">
+              infor </td>
+            <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Detail information</h4>
+                  </div>
+
+                  <div class="modal-body" ng-model="z">
+                    <div class="form-group">
+                      <label for="usr">Name:</label>
+                      <input type="text" class="form-control" id="username" ng-model='name'>
+                      <label for="usr">Password:</label>
+                      <input type="password" class="form-control" id="password" ng-model='password'>
+                      <label for="usr">Email:</label>
+                      <p type="text" class="form-control" id="email"> {{z.email}}</p>
+                      <label for="usr">address:</label>
+                      <p type="text" class="form-control" id="address">{{z.address}}</p>
+
+
+                      <label for="usr">Balance:</label>
+                      <p class="form-control" id="balance">{{z.balance}}</p>
+                      <label for="usr">Privatekey:</label>
+                      <p class="form-control" id="privatekey">{{z.privatekey}}</p>
+                    </div>
+
+                  </div>
+
+                  <div class="modal-footer">
+                      <button ng-click='showhistory()'  >History</button>
+
+                    <button ng-click='update()'> update</button>
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="close()">close</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <td style=" text-decoration: underline; " ng-style="mystyle">
+              <div class="dropdown">
+                <u type="text" data-toggle="dropdown">action</u>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" ng-click='lockfunction($index)'>{{lock}}</a>
+                  </li>
+                  <li>
+                    <a href="#" ng-click='deleteUser($index)'>Delete</a>
+                  </li>
+
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr style="color : rgb(76, 76, 238) ; text-align: center" ng-click='getUser()' id='moreuser'>
+            <td colspan="4"> more </td>
+          </tr>
+          <tr style="color : rgb(76, 76, 238) ; text-align: center; display :none" ng-click='getUserBlock()' id='moreblock'>
+            <td colspan="4"> more. </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div style="padding-left:  90%; padding-top: 0px; position: fixed">
+    <a href="/admin/signout">
+      <u>Log out</u>
+    </a>
+  </div>
+</body>
+
+</html>

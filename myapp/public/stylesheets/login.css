@@ -1,0 +1,111 @@
+
+
+.mainbar {
+  position: absolute;
+  width:100%;
+  height: 59px;
+  left: 1px;
+  top: 54px;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.symbol {
+  position: absolute;
+  width: 201px;
+  height: 178px;
+  left: 0px;
+  top: 0px;
+
+  background: rgba(24, 24, 23, 0.5);
+}
+
+.ztext{
+    position: absolute;
+    width: 9.3%;
+    height: 140px;
+    left: 40px;
+    top: 0px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 203px;
+    font-size: 144px;
+    text-align: center;
+    
+    color: #FFFFFF;
+    border: 0px solid #000000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.zinzacoin{
+    position: absolute;
+width: 1109px;
+height: 60px;
+left: 201px;
+top: 54px;
+
+font-family: Prompt;
+font-style: normal;
+font-weight: bold;
+line-height: 65px;
+font-size: 36px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.register{
+position: absolute;
+width: 148px;
+height: 45px;
+left: 15px;
+top: 195px;
+
+font-family: Prompt;
+font-style: normal;
+font-weight: 300;
+line-height: 44px;
+font-size: 24px;
+text-align: center;
+
+color: #07EEFD;
+}
+
+.support{
+    position: absolute;
+width: 148px;
+height: 45px;
+left: 15px;
+top: 269px;
+
+font-family: Prompt;
+font-style: normal;
+font-weight: 300;
+line-height: 44px;
+font-size: 24px;
+text-align: center;
+
+color: #07EEFD;
+}
+
+.line_register{
+    position: absolute;
+width: 118.07px;
+height: 0px;
+left: 29.97px;
+top: 242px;
+
+border: 1px solid #FFFFFF;
+}
+
+.line_support{
+    position: absolute;
+width: 118.07px;
+height: 0px;
+left: 29.97px;
+top: 316px;
+
+border: 1px solid #FFFFFF;
+}

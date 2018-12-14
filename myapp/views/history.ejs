@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title>Zcoi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/manageuser.css">
+    <script type="text/javascript" src="/javascripts/history.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style='background-color: #232738' ng-app="myapp" ng-controller="ctrl">
+    <div class='header_bar'>
+        <div class='header_bar_title'>
+            <div class='header_bar_title_Reactangle'></div>
+            <div class='header_bar_title_text'>A D M I N</div>
+        </div>
+        <div class='header_bar_symbol'>
+            <div class='header_bar_symbol_reactangle'></div>
+            <div class='header_bar_symbol_text'>Z</div>
+        </div>
+    </div>
+    <div style="padding-left:  90%; padding-top: 0px; position: fixed">
+        <a href="/admin/signout">
+            <u>Log out</u>
+        </a>
+    </div>
+    
+    <p style='color : white; display: none' id='address'><%=address%></p>
+    
+    <div class="container" style="padding-top: 250px; padding-left: 150px " ng-init='getListTransaction()'>
+            <div class ='container'>
+                    <label style ='color : white'>address : </label> <u style ='color : white'>{{address}}</u>
+            </div>
+        <table class=' table table-hover'>
+            <thead>
+                <tr>
+                    <th style=" color : white "> from </th>
+                    <th style=" color : white "> to </th>
+                    <th style=" color : white "> amount </th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="x in list" ng-style=" {color : 'white'}" ng-mouseover=" mystyle = { 'color' : 'black'}" ng-mouseleave="mystyle = {'color' : 'rgb(90, 157, 245)'}"
+                    ng-click='showinfor($index)' data-toggle="modal" data-target="#myModal">
+                    <td ng-style="mystyle" style='color : rgb(90, 157, 245)'> {{x.from}} </td>
+                    <td ng-style="mystyle" style='color : rgb(90, 157, 245)'> {{x.to}} </td>
+                    <td ng-style="mystyle" style='color : rgb(90, 157, 245)'> {{x.value}} </td>
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Detail information</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="form-group" ng-model="z">
+                                        <p style='background-color: rgb(192, 190, 187)'>bHash: {{z.blockHash}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>blockNumber : {{z.blockNumber}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>from : {{z.from}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>gas : {{z.gas}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>gasPrice : {{z.gasPrice}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>hash : {{z.hash}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>input : {{z.input}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>nonce : {{z.nonce}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>to : {{z.to}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>transactionIndex : {{z.transactionIndex}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>value : {{z.value}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>v : {{z.v}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>r : {{z.r}}</p>
+
+                                        <p style='background-color: rgb(192, 190, 187)'>s : {{z.s}}</p>
+
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+
+
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </tr>
+                <tr style="color : rgb(76, 76, 238) ; text-align: center" ng-click='getListTransaction()' >
+                        <td colspan="4"> more </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>

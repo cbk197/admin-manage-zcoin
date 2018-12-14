@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script type= "text/javascript" src="javascripts/angula.js"></script>
+  <head>
+    <title> chuan</title>
+  </head>
+  <body>
+    <div ng-app="cbk" ng-controller="ctr1">
+      
+     
+    
+    <form  action='/signup', method='POST'>
+      name:<input type="text" name="username"> <br>
+      mail :<input type="email" name="email"> <br>
+      pass  :<input type="password" name="password"><br>
+      <p>{{warning}}</p>
+      <button type="submit" >adduser</button><br>
+      
+    </form>
+
+    
+    
+    
+  </div>  
+</body>
+</html>

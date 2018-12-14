@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <title>Zcoi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/manageuser.css">
+  <script type="text/javascript" src="/javascripts/sencoinbase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style='background-color: #232738' ng-app="myapp" ng-controller="ctrl">
+  <div class='header_bar'>
+    <div class='header_bar_title'>
+      <div class='header_bar_title_Reactangle'></div>
+      <div class='header_bar_title_text'>A D M I N</div>
+    </div>
+    <div class='header_bar_symbol'>
+      <div class='header_bar_symbol_reactangle'></div>
+      <div class='header_bar_symbol_text'>Z</div>
+    </div>
+  </div>
+  <div style="padding-left:  90%; padding-top: 0%;position: fixed">
+      <a href="/admin/signout">
+        <u>Log out</u>
+      </a>
+    </div>
+  <div class='navigation_bar'>
+    <div class='navigation_bar_manage'>
+      <div class='navigation_bar_manage_text'>
+        <a href='http://localhost:3000/admin/admin2' style="color: white"> Home </a>
+      </div>
+      <div class='navigation_bar_manage_line'></div>
+    </div>
+    <div class='navigation_bar_interest'>
+      <div class='navigation_bar_interest_text'>
+        <p>
+          <a href='http://localhost:3000/admin/user' style="color: white"> Manage users </a>
+        </p>
+        <div class='navigation_bar_interest_line'></div>
+      </div>
+    </div>
+
+    <div class='navigation_bar_coinbase'>
+      <div class='navigation_bar_coinbase_text'>
+        <a href='http://localhost:3000/admin/sendcoinbase'> Send coinbase </a>
+      </div>
+      <div class='navigation_bar_coinbase_line'></div>
+    </div>
+  </div>
+
+  <div class='line_main'></div>
+  <div class='container' style='padding-top: 200px; padding-left: 300px; padding-right: 200px'>
+    <form>
+      <div class="form-group">
+        <label for="email" style='color : white'>address:</label>
+        <input type="text" class="form-control" ng-model='address'>
+        
+      </div>
+      <div class="form-group">
+        <label for="pwd" style='color: white'>amount :</label>
+        <input type="number" class="form-control" ng-model="amount">
+      </div>
+
+      <button type="submit" class="btn btn-default" ng-click='sendcoin()'>Sendcoin</button>
+    </form>
+  </div>
+  
+
+</body>
+
+</html>

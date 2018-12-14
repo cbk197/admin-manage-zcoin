@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "start": "node ./bin/www",
+        "test": "mocha --timeout 10000"
+    },
+    "dependencies": {
+        "ejs": "^2.6.1",
+        "https": "^1.0.0"
+    }
+}

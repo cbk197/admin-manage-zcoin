@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    
+    
+  <head>
+    <title> chuan</title>
+  </head>
+  <body>
+    <div ng-app="cbk" ng-controller="ctr1">
+      
+     
+    
+    <form  action='/login', method='POST'>
+      
+      username :<input type="text" name="username"> <br>
+      pass  :<input type="password" name="password"><br>
+      
+      <button type="submit" >adduser</button><br>
+      
+    </form>
+   <form  action='/loginface', method='GET'>
+      
+      
+      
+      <button type="submit" >loginwithface</button><br>
+      
+    </form>
+    <form  action='/logingoogle', method='GET'>
+      <input type="hidden" name="scope" value="https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo#email https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/tasks https://www-opensocial.googleusercontent.com/api/people https://www.googleapis.com/auth/plus.login" />
+      
+      
+      <button type="submit" >loginwithgoogle</button><br>
+      
+    </form>
+
+
+    
+    
+  </div>  
+</body>
+</html>
